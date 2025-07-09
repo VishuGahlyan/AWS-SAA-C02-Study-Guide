@@ -150,6 +150,8 @@ Agar kabhi tumhe apni progress ko lekar doubt ho ya zyada time chahiye ho, toh a
 
 You can cover a lot of ground by skimming over what you already know or what you can infer to be true. In particular, read the first sentence of each paragraph and if you have no uncertainty about what is being said in that sentence, move on to the first sentence of the next paragraph. Take notes whenever necessary.
 
+Aap kaafi kuch cover kar sakte ho by jaldi se padhna, un cheezon ko jo aap already jaante ho ya jo aap samajh sakte ho ki sach hai. Khaas kar, har paragraph ki pehli line padhna, aur agar us line mein aapko koi doubt nahi hai toh seedha agle paragraph ki pehli line par chale jao. Jab zarurat ho, notes lena mat bhoolna.
+
   1. <a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/wellarchitected-framework.pdf">AWS Well-Architected Framework</a>
 
   2. <a href="https://aws.amazon.com/vpc/faqs/">Amazon VPC FAQs</a>
@@ -185,54 +187,95 @@ You can cover a lot of ground by skimming over what you already know or what you
 ### IAM Simplified:
 
 IAM offers a centralized hub of control within AWS and integrates with all other AWS Services. IAM comes with the ability to share access at various levels of permission and it supports the ability to use identity federation (the process of delegating authentication to a trusted external party like Facebook or Google) for temporary or limited access. IAM comes with MFA support and allows you to set up custom password rotation policy across your entire organization. 
+
+IAM AWS ke andar ek centralized control hub provide karta hai aur yeh sabhi AWS Services ke saath integrate hota hai. IAM access share karne ki ability deta hai alag-alag permission levels par, aur yeh identity federation ko support karta hai (jis mein authentication ko trusted external party jaise Facebook ya Google ko delegate kiya jata hai) temporary ya limited access ke liye. IAM MFA support ke saath aata hai aur aapko poori organization mein custom password rotation policy set karne ki bhi suvidha deta hai.
+
 It is also PCI DSS compliant i.e. payment card industry data security standard. (passes government mandated credit card security regulations).
+
+Yeh PCI DSS compliant bhi hai, matlab payment card industry data security standard ko follow karta hai. (Jo government ke mandated credit card security regulations ko pass karta hai).
 
 ### IAM Entities:
 
 **Users** - any individual end user such as an employee, system architect, CTO, etc.
 
+**Users** - koi bhi individual end user, jaise employee, system architect, CTO, ya koi aur.
+
 **Groups** - any collection of similar people with shared permissions such as system administrators, HR employees, finance teams, etc. Each user within their specified group will inherit the permissions set for the group.
+
+**Groups** - ek collection hota hai similar logon ka jinke paas shared permissions hote hain, jaise system administrators, HR employees, finance teams, etc. Har user apne specified group ke andar us group ke permissions inherit karta hai.
 
 **Roles** - any software service that needs to be granted permissions to do its job, e.g- AWS Lambda needing write permissions to S3 or a fleet of EC2 instances needing read permissions from a RDS MySQL database.
 
+**Roles** - koi bhi software service jisko apna kaam karne ke liye permissions deni hoti hain, jaise AWS Lambda ko S3 mein write permissions chahiye, ya EC2 instances ko RDS MySQL database se read permissions leni hoti hain.
+
 **Policies** - the documented rule sets that are applied to grant or limit access. In order for users, groups, or roles to properly set permissions, they use policies. Policies are written in JSON and you can either use custom policies for your specific needs or use the default policies set by AWS.
+
+**Policies** - documented rule sets hote hain jo access dene ya limit karne ke liye apply kiye jaate hain. Users, groups, ya roles jab permissions set karte hain, toh wo policies ka use karte hain. Policies JSON mein likhi jaati hain, aur aap apni specific zarurat ke liye custom policies bana sakte ho ya phir AWS ke default policies use kar sakte ho.
 
 ![Screen Shot 2020-06-06 at 10 49 48 PM](https://user-images.githubusercontent.com/13093517/83959193-11533980-a848-11ea-9d03-d8133e0aaa86.png)
 
 IAM Policies are separated from the other entities above because they are not an IAM Identity. Instead, they are attached to IAM Identities so that the IAM Identity in question can perform its necessary function.
+IAM Policies un entities se alag rakhi jaati hain kyunki woh koi IAM Identity nahi hoti. Balki, policies ko IAM Identities ke saath attach kiya jata hai taaki woh IAM Identity apna required function properly perform kar sake.
 
 ### IAM Key Details:
 
 - IAM is a global AWS services that is not limited by regions. Any user, group, role or policy is accessible globally.
 
+- IAM ek global AWS service hai jo kisi region tak limited nahi hai. Koi bhi user, group, role, ya policy globally accessible hoti hai.
+
 - The root account with complete admin access is the account used to sign up for AWS. Therefore, the email address used to create the AWS account for use should probably be the official company email address.
+
+- Root account jo complete admin access deta hai, wahi account hota hai jo AWS sign up karte waqt use kiya jata hai. Isliye, AWS account banate waqt jo email address use kiya jaye, wo ideally official company email address hona chahiye.
 
 - New users have no permissions when their accounts are first created. This is a secure way of delegating access as permissions must be intentionally granted.
 
+- Jab naye users ke accounts banaye jaate hain, toh unke paas initially koi permissions nahi hoti. Yeh ek secure tareeka hai access delegate karne ka, kyunki permissions ko jaanbujh kar hi grant karna padta hai.
+
 - When joining the AWS ecosystem for the first time, new users are supplied an access key ID and a secret access key ID when you grant them programmatic access. These are created just once specifically for the new user to join, so if they are lost simply generate a new access key ID and a new secret access key ID. Access keys are only used for the AWS CLI and SDK so you cannot use them to access the console.
+
+- Jab koi naya user AWS ecosystem mein pehli baar join karta hai aur usko programmatic access diya jata hai, tab usko ek access key ID aur secret access key ID di jaati hai. Yeh keys sirf ek baar create hoti hain specifically naye user ke liye, toh agar yeh kho jaayein toh aap nayi access key ID aur secret access key ID generate kar sakte ho. Access keys sirf AWS CLI aur SDK ke liye use hoti hain, inhe console access ke liye use nahi kiya ja sakta.
 
 - When creating your AWS account, you may have an existing identity provider internal to your company that offers Single Sign On (SSO). If this is the case, it is useful, efficient, and entirely possible to reuse your existing identities on AWS. To do this, you let an IAM role be assumed by one of the Active Directories. This is because the IAM ID Federation feature allows an external service to have the ability to assume an IAM role.
 
+- Jab aap apna AWS account banate ho, toh ho sakta hai ki aapke company ke andar pehle se hi ek identity provider ho jo Single Sign On (SSO) offer karta ho. Agar aisa hai, toh apni existing identities ko AWS par reuse karna useful, efficient, aur bilkul possible hai. Iske liye, aap ek IAM role ko allow karte ho ki wo aapke Active Directory mein se kisi ek ke dwara assume kiya ja sake. Yeh isliye possible hota hai kyunki IAM Identity Federation feature ek external service ko IAM role assume karne ki ability deta hai.
+
 - IAM Roles can be assigned to a service, such as an EC2 instance, prior to its first use/creation or after its been in used/created. You can change permissions as many times as you need. This can all be done by using both the AWS console and the AWS command line tools.
+
+- IAM Roles ko kisi service, jaise EC2 instance, ko uske pehle use ya creation se pehle bhi assign kiya ja sakta hai, aur use hone ke baad bhi. Aap permissions jitni baar chahe change kar sakte ho. Yeh sab AWS console aur AWS command line tools dono se kiya ja sakta hai.
 
 - You cannot nest IAM Groups. Individual IAM users can belong to multiple groups, but creating subgroups so that one IAM Group is embedded inside of another IAM Group is not possible.
 
-- With IAM Policies, you can easily add tags that help define which resources are accessible by whom. These tags are then used to control access via a particular IAM policy. For example, production and development EC2 instances might be tagged as such. This would ensure that people who should only be able to access development instances cannot access production instances.  
+- Aap IAM Groups ko nest nahi kar sakte. Ek individual IAM user multiple groups ka member ho sakta hai, lekin ek IAM Group ke andar doosra IAM Group (subgroup) create karna possible nahi hai.
+
+- With IAM Policies, you can easily add tags that help define which resources are accessible by whom. These tags are then used to control access via a particular IAM policy. For example, production and development EC2 instances might be tagged as such. This would ensure that people who should only be able to access development instances cannot access production instances.
+
+- IAM Policies ke saath, aap aasani se tags add kar sakte ho jo define karte hain ki kaunse resources kis ke liye accessible hain. Yeh tags phir access control karne ke liye use hote hain kisi particular IAM policy ke through. For example, production aur development EC2 instances ko alag-alag tag kiya ja sakta hai. Isse yeh ensure hota hai ki jo log sirf development instances ko access kar sakte hain, wo production instances tak nahi pahunch pate.
 
 ### Priority Levels in IAM:
 - **Explicit Deny**: Denies access to a particular resource and this ruling cannot be overruled.
+- Explicit Deny: Kisi specific resource ka access deny karta hai, aur is decision ko override nahi kiya ja sakta.
 
 - **Explicit Allow**: Allows access to a particular resource so long as there is not an associated Explicit Deny.
+- Explicit Allow: Kisi particular resource ka access allow karta hai, jab tak uske against koi Explicit Deny na ho.
 
 - **Default Deny (or Implicit Deny)**: IAM identities start off with no resource access. Access instead must be granted.
+- Default Deny (ya Implicit Deny): IAM identities ke paas shuru mein koi resource access nahi hota. Access dena zaroori hota hai.
 
 ### IAM Security Tools:
    **IAM Access Advisor(user level)**
+   IAM Access Advisor (user level) kya hota hai?
+Yeh ek feature hai jo aapko batata hai ki kisi specific user ne AWS resources ka kitna aur kaunse level par access kiya hai. Isse aap samajh sakte ho ki user ke paas diye gaye permissions kitne useful hain aur kaunse permissions unnecessary hain. Yeh help karta hai permissions ko optimize karne mein, taaki aap sirf required access hi de pao aur security better ho.
 -  Acess advisor shows service permissions granted to a user and when those services were last accessed.
+-  Access Advisor dikhata hai ki user ko kaun-kaunse service permissions diye gaye hain aur woh services last kab access ki gayi thi.
+
 -  You can use this information to revise your policies.
+-  Aap is information ka use karke apni policies ko revise kar sakte ho.
 
   **IAM Credentials Report(account level)**
+  IAM Credentials Report (account level)
+Yeh ek report hoti hai jo aapke poore AWS account ke saare users ke baare mein details deti hai, jaise unke credentials (passwords, access keys, MFA devices) ka status kya hai. Is report se aap easily check kar sakte ho ki kaunse users ke credentials active hain, kab last use hue the, aur koi security risk toh nahi hai. Yeh security audit aur compliance ke liye bahut useful hoti hai.
 -   a report that lists all of your account users and the status of their various credentials.
+-   Ek report jo aapke account ke saare users aur unke different credentials ki status ko list karti hai.
 
 
 ## Simple Storage Service (S3)
