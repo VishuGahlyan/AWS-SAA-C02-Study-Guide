@@ -1,10 +1,23 @@
 # AWS SAA-C02 Study Guide
 This study guide will help you pass the AWS Certified Solutions Architect - Associate exam. Ideally, you should reference this guide while working through the following material:
 
+Ye study guide tumhe AWS Certified Solutions Architect - Associate exam pass karne mein madad karega. Ideally, tumhe is guide ka reference tab lena chahiye jab tum neeche diye gaye material par kaam kar rahe ho:
+
   1. Stephane Maarek's <a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?couponCode=JUL_25_GET_STARTED">Ultimate AWS Certified Solutions Architect Associate 2025 course</a> (permanent discount available through this link)
+
+   Stephane Maarek ka <a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?couponCode=JUL_25_GET_STARTED">Ultimate AWS Certified Solutions Architect Associate 2025 course</a> (is link ke through permanent discount available hai)
+
   2. The FAQs for the most critical services, included in the recommended reading list below
+
+     Sabse important services ke FAQs, jo neeche diye gaye recommended reading list mein shamil hain
+
   3. Stephane Maarek's 6 <a href="https://www.udemy.com/course/practice-exams-aws-certified-solutions-architect-associate/?couponCode=JUL_25_GET_STARTED">Practice Exams | AWS Certified Solutions Architect Associate </a> (permanent discount available through this link)
-  4. Andrew Brown's <a href="https://www.youtube.com/watch?v=c3Cn4xYfxJY">AWS Solutions Architect Associate Certification (SAA-C03) – Full Course to PASS the Exam</a> 
+
+     Stephane Maarek ke 6 <a href="https://www.udemy.com/course/practice-exams-aws-certified-solutions-architect-associate/?couponCode=JUL_25_GET_STARTED">Practice Exams | AWS Certified Solutions Architect Associate</a> (is link ke through permanent discount available hai)
+
+  5. Andrew Brown's <a href="https://www.youtube.com/watch?v=c3Cn4xYfxJY">AWS Solutions Architect Associate Certification (SAA-C03) – Full Course to PASS the Exam</a> 
+
+  Andrew Brown ka <a href="https://www.youtube.com/watch?v=c3Cn4xYfxJY">AWS Solutions Architect Associate Certification (SAA-C03) – Full Course to PASS the Exam</a>
 
 *Notes*:
 If at any point you find yourself feeling uncertain of your progress and in need of more time, you can postpone your AWS exam date. Be sure to also keep up with the ongoing discussions in <a href="https://reddit.com/r/AWSCertifications/">r/AWSCertifications</a> as you will find relevant exam tips, studying material, and advice from other exam takers. Before experimenting with AWS, it's very important to be sure that you know what is <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc">free</a> and what isn't. Relevant Free Tier FAQs can be found <a href="https://aws.amazon.com/free/free-tier-faqs/">here</a>. 
